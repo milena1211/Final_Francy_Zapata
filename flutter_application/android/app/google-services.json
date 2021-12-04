@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1080052000716",
+    "project_id": "final-francy-zapata",
+    "storage_bucket": "final-francy-zapata.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080052000716:android:6cd5f02ac312ed918a1f69",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1080052000716-lqsf88d63opgmj6o6ajdh7aplcsraf5u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_application",
+            "certificate_hash": "ffa0c387f98a3740f793f35dc7283199dad6c7d6"
+          }
+        },
+        {
+          "client_id": "1080052000716-76d28dpv42vo98c85u9mkioahqed415c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbpS9698RKhyQ6SMKn-dxnZ4EuacPKfLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1080052000716-76d28dpv42vo98c85u9mkioahqed415c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
