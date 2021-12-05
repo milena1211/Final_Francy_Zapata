@@ -19,11 +19,11 @@ class Final {
   Final.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     date = json['date'];
-    email = json['email'];
+    email = json['email'] == null ? '' : json['email'];
     qualification = json['qualification'];
-    theBest = json['theBest'];
-    theWorst = json['theWorst'];
-    remarks = json['remarks'];
+    theBest = json['theBest'] == null ? '' : json['theBest'];
+    theWorst = json['theWorst'] == null ? '' : json['theWorst'];
+    remarks = json['remarks'] == null ? '' : json['remarks'];
   }
 
   Map<String, dynamic> toJson() {

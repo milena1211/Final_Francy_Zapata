@@ -13,6 +13,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'home_screen.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -21,7 +23,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  String _email = 'sandra@yopmail.com';
+  String _email = 'zulu@yopmail.com';
   String _emailError = '';
   bool _emailShowError = false;
   String _password = '';
@@ -96,58 +98,6 @@ class _LoginScreenState extends State<LoginScreen> {
       MaterialPageRoute(
         builder: (context) => RegisterUserScreen()
       )
-    );*/
-  }
-  void _login() async {
-    setState(() {
-      _passwordshow = false;
-    });
-
-    if (!_validateFields()) {
-      return;
-    }
-    setState(() {
-      _showLoader = true;
-    });
-
-    Map<String, dynamic> request = {
-      'userName': _email,
-      'password': _password,
-    };
-    var url = Uri.parse('${Constans.apiUrl}/api/Account/CreateToken');
-    var response = await http.post(
-      url,
-      headers: {
-        'content-type': 'application/json',
-        'accept': 'application/json',
-      },
-      body: jsonEncode(request),
-    );
-
-    setState(() {
-      _showLoader = false;
-    });
-
-    if (response.statusCode >= 400) {
-      setState(() {
-        _passwordShowError = true;
-        _passwordError = "Email o password incorectos";
-      });
-      return;
-    }
-    var body = response.body;
-
-    if (_rememberme) {
-      _storeUser(body);
-    }
-
-    var decodeJson = jsonDecode(body);
-    var token = Token.fromJson(decodeJson);
-    /*Navigator.pushReplacement(
-    context, 
-    MaterialPageRoute(
-      builder: (context) => HomeScreen(token: token,)
-      ),
     );*/
   }
 
@@ -249,12 +199,12 @@ class _LoginScreenState extends State<LoginScreen> {
     }
     var decodedJson = jsonDecode(body);
     var token = Token.fromJson(decodedJson);
-    /*Navigator.pushReplacement(
-      context, 
-      MaterialPageRoute(
-        builder: (context) => HomeScreen(token: token,)
-      )
-    );*/
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (context) => HomeScreen(
+                  token: token,
+                )));
   }
 
   void _storeUser(String body) async {
